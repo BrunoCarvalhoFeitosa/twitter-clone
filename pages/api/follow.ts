@@ -9,7 +9,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   try {
     const { userId } = req.body
-    const { currentUser } = await serverAuth(req)
+    const { currentUser } = await serverAuth(req, res)
 
     if (!userId || typeof userId !== "string") {
       throw new Error("Invalid ID.")

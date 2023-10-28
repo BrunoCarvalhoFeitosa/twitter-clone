@@ -9,7 +9,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(405).end()
     }
     const { postId } = req.body
-    const { currentUser } = await serverAuth(req)
+    const { currentUser } = await serverAuth(req, res)
 
     if (!postId || typeof postId !== "string") {
       throw new Error("Invalid ID.")
