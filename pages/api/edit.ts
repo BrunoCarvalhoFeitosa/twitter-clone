@@ -8,7 +8,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(405).end()
     }
 
-    const { currentUser } = await serverAuth(req, res)
+    const { currentUser } = await serverAuth(req)
     const { name, username, bio, profileImage, coverImage } = req.body
 
     if (!name || !username) {

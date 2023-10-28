@@ -8,7 +8,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    const { currentUser } = await serverAuth(req, res)
+    const { currentUser } = await serverAuth(req)
     const { body } = req.body
     const { postId } = req.query
 
