@@ -3,25 +3,36 @@ import bcrypt from "bcrypt"
 import prisma from "@/libs/prismadb"
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== "POST") {
-    return res.status(405).end()
-  }
-
   try {
+    if (req.method !== "POST") {
+      return res.status(405).end()
+    }
+
     const { email, name, username, password } = req.body
+
+    const existingUser = await prisma.user.findUnique({
+      where: {
+        email
+      }
+    })
+
+    if (existingUser) {
+      return res.status(422).json({ error: "Email taken." })
+    }
+
     const hashedPassword = await bcrypt.hash(password, 12)
+
     const user = await prisma.user.create({
       data: {
         email,
         name,
         username,
-        hashedPassword
+        hashedPassword,
       }
     })
 
     return res.status(200).json(user)
-  } catch(error) {
-    console.error("Error while fetch user register data.", error)
-    return res.status(400).end()
+  } catch (error) {
+    return res.status(400).json({ error: `Something went wrong: ${error}` })
   }
 }
