@@ -12,7 +12,7 @@ const FormContext = createContext<FormContextType | undefined>(undefined)
 
 type FormContextProviderProps = {
   children: ReactNode
-};
+}
 
 export const FormProvider: React.FC<FormContextProviderProps> = ({ children }) => {
   const [formType, setFormType] = useState<FormType>("sign-in")

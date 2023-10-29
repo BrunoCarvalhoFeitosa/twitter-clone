@@ -10,7 +10,7 @@ const EditModalProfileContext = createContext<EditModalProfileType | undefined>(
 
 type EditModalProfileProviderProps = {
   children: ReactNode
-};
+}
 
 export const EditModalProfileProvider: React.FC<EditModalProfileProviderProps> = ({ children }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)

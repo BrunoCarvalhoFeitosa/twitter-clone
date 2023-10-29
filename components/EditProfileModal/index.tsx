@@ -94,7 +94,7 @@ const EditProfileModal = () => {
         setIsOpen(false)
       }
     }
-    window.addEventListener("keydown", handleModalClose);
+    window.addEventListener("keydown", handleModalClose)
 
     return () => {
       window.removeEventListener("keydown", handleModalClose)

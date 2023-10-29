@@ -15,20 +15,20 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
   value,
   disabled
 }) => {
-  const [base64, setBase64] = useState(value);
+  const [base64, setBase64] = useState(value)
 
   const handleChange = useCallback((base64: string) => {
-    onChange(base64);
-  }, [onChange]);
+    onChange(base64)
+  }, [onChange])
 
   const handleDrop = useCallback((files: any) => {
       const file = files[0]
-      const reader = new FileReader();
+      const reader = new FileReader()
       reader.onload = (event: any) => {
-        setBase64(event.target.result);
-        handleChange(event.target.result);
-      };
-      reader.readAsDataURL(file);
+        setBase64(event.target.result)
+        handleChange(event.target.result)
+      }
+      reader.readAsDataURL(file)
   }, [handleChange])
 
   const { getRootProps, getInputProps } = useDropzone({ 
@@ -39,7 +39,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
       'image/jpeg': [],
       'image/png': [],
     } 
-  });
+  })
 
   return (
     <div
