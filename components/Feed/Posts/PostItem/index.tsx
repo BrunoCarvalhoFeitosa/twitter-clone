@@ -16,7 +16,6 @@ interface PostItemProps {
 
 const PostItem: React.FC<PostItemProps> = ({ userId, data }) => {
   const router = useRouter()
-  const { data: currentUser } = useCurrentUser()
   const { hasLiked, toggleLike } = useLike({ postId: data.id, userId })
 
   const goToUser = useCallback((event: any) => {
