@@ -114,8 +114,8 @@ const EditProfileModal = () => {
               <AiOutlineClose />
             </button>
           </div>
-          <div className="absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] w-[50%] h-[85vh] bg-white">
-            <h2 className="my-4 text-[24px] font-bold text-center">
+          <div className="absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] py-[40px] lg:h-[60vh] w-[50%] bg-white">
+            <h2 className="mb-4 text-[24px] font-bold text-center">
               Editar dados pessoais
             </h2>
             <form onSubmit={(event) => onSubmit(event)} className="flex flex-col gap-y-4">
