@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/BrunoCarvalhoFeitosa/twitter-clone">
-    <img src="public\images\fav.png" alt="Logo" width="100" height="100" />
+    <img src="public\images\fav.png" alt="Logo" width="48" height="48" />
   </a>
 
   <p align="center">
